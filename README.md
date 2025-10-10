@@ -34,38 +34,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-my-portfolio/
-├─ app/
-│ ├─ (site)/
-│ │ ├─ page.tsx
-│ │ ├─ about-section.tsx
-│ │ ├─ hero-section.tsx
-│ │ ├─ projects-section.tsx
-│ │ ├─ experience-section.tsx
-│ │ └─ contact-section.tsx
-│ ├─ layout.tsx
-│ ├─ globals.css
-│ └─ favicon.ico
-│
-├─ components/
-│ ├─ ui/ # shadcn/ui generated components
-│ ├─ navbar.tsx
-│ ├─ footer.tsx
-│ └─ section.tsx # shared wrapper (padding, max width, motion)
-│
-├─ lib/
-│ ├─ data.ts # skills, projects, experience arrays
-│ └─ theme.ts # dark-mode helpers
-│
-├─ public/
-│ ├─ resume.pdf
-│ └─ images/
-│ └─ avatar.jpg
-│
-├─ tailwind.config.ts
-├─ postcss.config.js
-├─ tsconfig.json
-├─ next.config.mjs
-├─ package.json
-└─ README.md

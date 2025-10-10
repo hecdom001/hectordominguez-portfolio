@@ -45,6 +45,13 @@ export const SKILLS = {
     ]
 } as const;
 
+export type ProjectLink = { href: string; label: string };
+export type Project = {
+    title: string;
+    blurb: string;
+    tags: readonly string[];
+    links: readonly ProjectLink[];
+};
 
 export const PROJECTS = [
     {
@@ -58,7 +65,7 @@ export const PROJECTS = [
     }
 
     ,
-] as const;
+] satisfies ReadonlyArray<Project>;
 
 
 export const EXPERIENCE = [
