@@ -55,6 +55,15 @@ export type Project = {
 
 export const PROJECTS = [
     {
+        title: "Personal Portfolio",
+        blurb: "My personal portfolio and site to showcase software projects, career history, and personal interests.",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion", "pnpm"],
+        links: [
+            { href: "https://hectordominguez-portfolio.vercel.app", label: "Live" },
+            { href: "https://github.com/hecdom001/hectordominguez-portfolio", label: "Code" }
+        ]
+    },
+    {
         title: "CoachFlow",
         blurb: "All-in-one platform for fitness coaches: scheduling, CRM, workout tracking, and payments.",
         tags: ["React", "TypeScript", "AWS", "Serverless"],
@@ -63,8 +72,6 @@ export const PROJECTS = [
             { href: "https://github.com/hector/coachflow", label: "Code" }
         ]
     }
-
-    ,
 ] satisfies ReadonlyArray<Project>;
 
 
