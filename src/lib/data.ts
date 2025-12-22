@@ -62,6 +62,18 @@ export const WORKS = [
         ]
     },
     {
+        tag: "Web Application",
+        completed: true,
+        title: "Inventory Tracker",
+        blurb: "Our Inventory Tracker is a simple, private-seller tool designed for managing footwear inventory in Mexico. It powers the JackyWear site with features like dashboards, adding and listing inventory, fast search, and sales history. It’s currently used internally, and we’re exploring expanding it so other local sellers in Mexico can manage their inventory through the same platform.",
+        img: "/images/InventoryTracker.png",
+        showImage: true,
+        links: [
+            { href: "https://jackywear.com/admin", label: "live" },
+            { href: "https://github.com/hecdom001/jackiecrocs", label: "Code" }
+        ]
+    },
+    {
         tag: "Platform",
         completed: false,
         title: "CoachOS",
