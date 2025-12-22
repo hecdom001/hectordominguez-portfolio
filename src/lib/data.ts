@@ -52,7 +52,7 @@ export const WORKS = [
     {
         tag: "Web Application",
         completed: true,
-        title: "https://jackywear.com",
+        title: "jackywear",
         blurb: "JackyWear.com is a small online footwear shop created to support a side business selling shoes in Mexico. Customers can browse available pairs and contact through WhatsApp to reserve or buy.",
         img: "/images/jackywear.png",
         showImage: true,
