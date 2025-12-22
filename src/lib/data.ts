@@ -50,6 +50,18 @@ export const WORKS = [
         ]
     },
     {
+        tag: "Web Application",
+        completed: true,
+        title: "https://jackywear.com",
+        blurb: "JackyWear.com is a small online footwear shop created to support a side business selling shoes in Mexico. Customers can browse available pairs and contact through WhatsApp to reserve or buy.",
+        img: "/images/jackywear.png",
+        showImage: true,
+        links: [
+            { href: "https://jackywear.com", label: "live" },
+            { href: "https://github.com/hecdom001/jackiecrocs", label: "Code" }
+        ]
+    },
+    {
         tag: "Platform",
         completed: false,
         title: "CoachOS",
