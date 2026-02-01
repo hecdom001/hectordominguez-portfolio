@@ -99,7 +99,7 @@ export const WORKS = [
     {
         tag: "Web Application",
         completed: true,
-        title: "1ExpertRoofing",
+        title: "ExpertRoofing",
         blurb: "Expert Roofing is a responsive business website built to showcase services, capture leads, and establish trust for a local roofing company.",
         img: "/images/1expertroofing/desktopHome.png",
         showImage: true,
