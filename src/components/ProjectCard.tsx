@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useMemo, useState } from "react";
 import { Work } from "@/lib/data";
 import { ACCENT_A, ACCENT_B } from "@/lib/theme";
 import Image from "next/image";
@@ -17,6 +19,19 @@ function Badge({ children }: { children: React.ReactNode }) {
 }
 
 export default function ProjectCard({ work, className }: Props) {
+    const images = useMemo(() => {
+        const arr = (work.images && work.images.length > 0) ? work.images : [];
+        if (arr.length > 0) return arr;
+        return work.img ? [work.img] : [];
+    }, [work.images, work.img]);
+
+    const [active, setActive] = useState(0);
+
+    React.useEffect(() => {
+        setActive(0); // reset when card data changes
+    }, [work.title]);
+
+
     const primary =
         work.links?.find(l => /production|live/i.test(l.label)) ?? work.links?.[0];
     const secondary = (work.links ?? []).filter(l => l !== primary);
@@ -94,15 +109,59 @@ export default function ProjectCard({ work, className }: Props) {
                         </div>
                     )}
 
-                    {work.showImage && work.img && (
-                        <div className="mt-6 rounded-2xl border overflow-hidden shadow">
-                            <Image
-                            src={work.img}
-                            alt={work.title}
-                            width={1200}
-                            height={800}
-                            className="w-full h-auto object-cover"
-                            />
+                    {work.showImage && images.length > 0 && (
+                        <div className="mt-6 rounded-2xl border overflow-hidden shadow bg-white">
+                            <div className="relative">
+                                <Image
+                                    src={images[active]}
+                                    alt={`${work.title} screenshot ${active + 1}`}
+                                    width={1200}
+                                    height={800}
+                                    className="w-full h-auto object-cover"
+                                    priority={false}
+                                />
+
+                                {/* prev/next (only if multiple) */}
+                                {images.length > 1 && (
+                                    <>
+                                        <button
+                                            type="button"
+                                            onClick={() => setActive((prev) => (prev - 1 + images.length) % images.length)}
+                                            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 border px-3 py-2 text-sm shadow hover:bg-white"
+                                            aria-label="Previous image"
+                                        >
+                                            ‹
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            onClick={() => setActive((prev) => (prev + 1) % images.length)}
+                                            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 border px-3 py-2 text-sm shadow hover:bg-white"
+                                            aria-label="Next image"
+                                        >
+                                            ›
+                                        </button>
+                                    </>
+                                )}
+                            </div>
+
+                            {/* dots */}
+                            {images.length > 1 && (
+                                <div className="flex items-center justify-center gap-2 p-3">
+                                    {images.map((_, i) => (
+                                        <button
+                                            key={i}
+                                            type="button"
+                                            onClick={() => setActive(i)}
+                                            className={[
+                                                "h-2.5 w-2.5 rounded-full border",
+                                                i === active ? "bg-gray-900 border-gray-900" : "bg-white border-gray-300"
+                                            ].join(" ")}
+                                            aria-label={`Go to image ${i + 1}`}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
